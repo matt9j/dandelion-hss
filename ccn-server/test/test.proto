@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message SimpleProto {
+    optional string message = 1;
+}
+
