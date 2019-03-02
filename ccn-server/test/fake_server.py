@@ -27,7 +27,15 @@ def do_test_proto():
     print("Generating a proto message in python")
     proto_object = test_proto.SimpleProto()
     proto_object.message = "Hello proto world!"
-    print("The message is \'" + proto_object.message + "\'")
+    proto_object.year = 2019
+    proto_object.timestamp = -123456
+    proto_object.submessage.year = 554433
+    proto_object.submessage.inner = "Genie in the bottle, in a bottle"
+    print("The message is \'", proto_object.message, "\'")
+    print("The year is \'", proto_object.year, "\'")
+    print("The timestamp is \'", proto_object.timestamp, "\'")
+    print("The submessage year is \'", proto_object.submessage.year, "\'")
+    print("The submessage inner is \'", proto_object.submessage.inner, "\'")
     serialized_proto = proto_object.SerializeToString()
     print("When serialized that looks like:")
     print(serialized_proto)
