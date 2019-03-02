@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=_b('\n\ntest.proto\"\x1e\n\x0bSimpleProto\x12\x0f\n\x07message\x18\x01 \x01(\t')
+  serialized_pb=_b('\n\ntest.proto\"`\n\x0bSimpleProto\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04year\x18\x02 \x01(\x03\x12\x11\n\ttimestamp\x18\x03 \x01(\x05\x12\x1f\n\nsubmessage\x18\x1b \x01(\x0b\x32\x0b.Submessage\")\n\nSubmessage\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05inner\x18\x02 \x01(\t')
 )
 
 
@@ -39,6 +39,27 @@ _SIMPLEPROTO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='year', full_name='SimpleProto.year', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='SimpleProto.timestamp', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='submessage', full_name='SimpleProto.submessage', index=3,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -52,10 +73,50 @@ _SIMPLEPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=14,
-  serialized_end=44,
+  serialized_end=110,
 )
 
+
+_SUBMESSAGE = _descriptor.Descriptor(
+  name='Submessage',
+  full_name='Submessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='year', full_name='Submessage.year', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='inner', full_name='Submessage.inner', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=112,
+  serialized_end=153,
+)
+
+_SIMPLEPROTO.fields_by_name['submessage'].message_type = _SUBMESSAGE
 DESCRIPTOR.message_types_by_name['SimpleProto'] = _SIMPLEPROTO
+DESCRIPTOR.message_types_by_name['Submessage'] = _SUBMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SimpleProto = _reflection.GeneratedProtocolMessageType('SimpleProto', (_message.Message,), dict(
@@ -64,6 +125,13 @@ SimpleProto = _reflection.GeneratedProtocolMessageType('SimpleProto', (_message.
   # @@protoc_insertion_point(class_scope:SimpleProto)
   ))
 _sym_db.RegisterMessage(SimpleProto)
+
+Submessage = _reflection.GeneratedProtocolMessageType('Submessage', (_message.Message,), dict(
+  DESCRIPTOR = _SUBMESSAGE,
+  __module__ = 'test_pb2'
+  # @@protoc_insertion_point(class_scope:Submessage)
+  ))
+_sym_db.RegisterMessage(Submessage)
 
 
 # @@protoc_insertion_point(module_scope)

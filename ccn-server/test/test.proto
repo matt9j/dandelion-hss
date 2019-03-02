@@ -2,5 +2,13 @@ syntax = "proto2";
 
 message SimpleProto {
     optional string message = 1;
+    optional int64 year = 2;
+    optional int32 timestamp = 3;
+    optional Submessage submessage = 27;
+}
+
+message Submessage {
+    optional int32 year= 1;
+    optional string inner = 2;
 }
 
